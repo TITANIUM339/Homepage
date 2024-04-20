@@ -1,0 +1,207 @@
+@font-face {
+    font-family: Caveat;
+    src: url("../assets/fonts/Caveat/Caveat-VariableFont_wght.ttf");
+}
+
+:root {
+    --dracula-orchid: #2c3639;
+    --rocky-creek: #3f4e4f;
+    --ancient-pottery: #a27b5c;
+    --sassafras-tea: #dcd7c9;
+}
+
+body {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.info,
+main {
+    padding: 20px;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--ancient-pottery);
+    transform: skewY(-30deg) translateY(calc(50vw * tan(-30deg)));
+    z-index: -1;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.profile-container {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    width: 100%;
+    background-image: url("../assets/images/header-man.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 2 / 3;
+    font-family: Caveat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.about > h2 {
+    color: var(--dracula-orchid);
+    font-family: Caveat;
+}
+
+.about > p {
+    color: var(--rocky-creek);
+}
+
+.header-links, .footer-links {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+:any-link {
+    text-decoration: none;
+    color: var(--dracula-orchid);
+}
+
+@media (hover: hover) {
+    :any-link:hover {
+        color: var(--sassafras-tea);
+    }
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+main > section > h1 {
+    color: var(--dracula-orchid);
+    font-family: Caveat;
+}
+
+.projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 250px 150px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.screenshot {
+    background-color: var(--sassafras-tea);
+    color: var(--dracula-orchid);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+}
+
+.description {
+    color: var(--dracula-orchid);
+    padding: 15px;
+}
+
+.description > p {
+    color: var(--rocky-creek);
+}
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-links {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 0;
+}
+
+footer {
+    background-color: var(--ancient-pottery);
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer > :first-child {
+    padding: 20px;
+}
+
+.footer-links {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer > :first-child > section > h1 {
+    text-align: center;
+    font-family: Caveat;
+}
+
+footer > :first-child > section > p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.address, .contact-info {
+    margin-bottom: 20px;
+}
+
+.number, .email {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    display: none;
+}
+
+.footer-image {
+    max-width: 500px;
+    width: 100%;
+    background-image: url("../assets/images/footer-man.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 2 / 3;
+}
