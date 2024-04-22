@@ -353,7 +353,7 @@ footer > div > :first-child > section > p {
     .about > h2 {
         text-align: start;
     }
-    
+
     .header-links {
         display: flex;
         justify-content: flex-end;
