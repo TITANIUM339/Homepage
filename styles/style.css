@@ -11,7 +11,7 @@
 }
 
 body {
-    min-height: 100dvh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -20,6 +20,7 @@ body {
 }
 
 header {
+    position: relative;
     margin-bottom: 20px;
 }
 
@@ -62,23 +63,22 @@ main {
 }
 
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 10px;
 }
 
 .about > h2 {
     color: var(--dracula-orchid);
     font-family: Caveat;
+    text-align: center;
 }
 
 .about > p {
     color: var(--rocky-creek);
 }
 
-.header-links, .footer-links {
-    font-size: 24px;
+.header-links,
+.footer-links {
+    font-size: 32px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -95,11 +95,18 @@ main {
     }
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 main > section {
+    max-width: 1000px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 20px;
 }
 
 main > section > h1 {
@@ -116,7 +123,7 @@ main > section > h1 {
 
 .card {
     display: grid;
-    grid-template-rows: 250px 150px;
+    grid-template-rows: 3fr 2fr;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -129,11 +136,13 @@ main > section > h1 {
     font-size: 2rem;
     font-weight: 100;
     text-align: center;
+    padding: 20px;
 }
 
 .description {
     color: var(--dracula-orchid);
-    padding: 15px;
+    padding: 20px;
+    background-color: white;
 }
 
 .description > p {
@@ -143,8 +152,9 @@ main > section > h1 {
 .title {
     display: flex;
     justify-content: space-around;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .card-links {
@@ -156,14 +166,18 @@ main > section > h1 {
 }
 
 footer {
-    background-color: var(--ancient-pottery);
-    color: white;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    background-color: var(--ancient-pottery);
+    color: white;
 }
 
-footer > :first-child {
+footer > div {
+    max-width: 1000px;
+    width: 100%;
+}
+
+footer > div > :first-child {
     padding: 20px;
 }
 
@@ -173,21 +187,23 @@ footer > :first-child {
     padding-right: 20px;
 }
 
-footer > :first-child > section > h1 {
+footer > div > :first-child > section > h1 {
     text-align: center;
     font-family: Caveat;
 }
 
-footer > :first-child > section > p {
+footer > div > :first-child > section > p {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-.address, .contact-info {
+.address,
+.contact-info {
     margin-bottom: 20px;
 }
 
-.number, .email {
+.number,
+.email {
     display: flex;
     gap: 15px;
 }
@@ -197,11 +213,168 @@ footer > :first-child > section > p {
 }
 
 .footer-image {
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     background-image: url("../assets/images/footer-man.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 3 / 4;
+}
+
+@media (min-width: 600px) {
+    header {
+        margin-top: 150px;
+        margin-left: 75px;
+        margin-right: 75px;
+        justify-self: center;
+        max-width: 600px;
+        background-color: white;
+        box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .background {
+        height: 40vh;
+        transform: skewY(-15deg) translateY(calc(50vw * tan(-15deg)));
+    }
+
+    .info {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    main {
+        padding: 75px;
+    }
+
+    .block {
+        float: left;
+        width: 45%;
+        aspect-ratio: 10 / 7;
+    }
+
+    .profile-container {
+        position: absolute;
+        padding: 0;
+        max-width: 50%;
+        width: 100%;
+        top: -20%;
+        left: -10%;
+    }
+
+    .profile {
+        aspect-ratio: 1 / 1;
+        align-items: start;
+    }
+
+    .profile > h1 {
+        font-size: 3rem;
+        position: absolute;
+        top: 0;
+        right: -100%;
+    }
+
+    .header-links {
+        display: none;
+    }
+
+    main > section > h1 {
+        align-self: flex-start;
+    }
+
+    footer {
+        padding: 75px;
+    }
+
+    footer > div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    footer > div > :first-child > section > h1 {
+        text-align: start;
+    }
+
+    footer > div > :first-child {
+        padding: 0;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .number {
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .footer-image {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .background {
+        height: 50vh;
+        transform: skewY(-10deg) translateY(calc(50vw * tan(-10deg)));
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        margin-left: 475px;
+        margin-bottom: 150px;
+    }
+
+    .profile-container {
+        all: unset;
+        width: 200px;
+        position: absolute;
+        transform: translateX(-150%) scale(2);
+    }
+
+    .profile {
+        align-items: flex-end;
+    }
+
+    .profile > h1 {
+        position: static;
+    }
+
+    .info {
+        margin: 0;
+    }
+
+    .about > h2 {
+        text-align: start;
+    }
+    
+    .header-links {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .block {
+        display: none;
+    }
+
+    main {
+        justify-self: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    footer > div {
+        align-items: flex-start;
+    }
+
+    .footer-image {
+        max-width: 600px;
+        aspect-ratio: 3 / 2;
+    }
 }
